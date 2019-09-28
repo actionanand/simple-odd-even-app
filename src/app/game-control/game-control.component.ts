@@ -22,6 +22,11 @@ export class GameControlComponent implements OnInit {
     this.interval = setInterval(()=>{
       this.intervalFired.emit(this.firedNumber + 1);
       this.firedNumber++;
+
+      if(this.firedNumber >= 13){
+        this.onPauseGame();
+      }
+
     },1000);
   }
 

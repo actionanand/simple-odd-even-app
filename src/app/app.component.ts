@@ -11,6 +11,7 @@ export class AppComponent {
   oddNumbers: number[] = [];
 
   onIntervalFired(numberFired: number){
+   
     if(numberFired % 2 === 0){
       this.evenNumbers.push(numberFired);
     }
