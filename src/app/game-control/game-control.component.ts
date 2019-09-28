@@ -10,6 +10,7 @@ export class GameControlComponent implements OnInit {
   @Output('intvFrd') intervalFired = new EventEmitter<number>();
   interval;
   firedNumber: number = 0;
+  stopButton: boolean = false;
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class GameControlComponent implements OnInit {
   }
 
   onStartGame(){
+    this.stopButton = true;
     this.interval = setInterval(()=>{
       this.intervalFired.emit(this.firedNumber + 1);
       this.firedNumber++;
@@ -24,6 +26,7 @@ export class GameControlComponent implements OnInit {
   }
 
   onPauseGame(){
+    this.stopButton = false;
     clearInterval(this.interval);
   }
 
