@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'simple-odd-even-app';
+  title = 'simple odd even app';
+  evenNumbers: number[] = [];
+  oddNumbers: number[] = [];
+
+  onIntervalFired(numberFired: number){
+    if(numberFired % 2 === 0){
+      this.evenNumbers.push(numberFired);
+    }
+    else
+    {
+    this.oddNumbers.push(numberFired);
+    }
+  }
+  
 }
